@@ -6,7 +6,7 @@ const port = 4000
 
 app.use(express.json())
 app.use('/customer',customer)
-app.use('/item',itemi)
+app.use('/item',item)
 
 app.get('/', (req, res) => {
    console.log('get request coming!')

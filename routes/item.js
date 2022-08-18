@@ -33,50 +33,50 @@ router.put('/',(req,res)=>{
     const description = req.body.description
     const qtyOnHand = req.body.qtyOnHand
     var query = "UPDATE Item SET description=?, qtyOnHand=? WHERE code=?"
-    connection.query(query, [name,username,id], (error,rows) =>{
+    connection.query(query, [description,qtyOnHand,code], (error,rows) =>{
         if (error) throw error
 
         if (rows.affectedRows >0){
-            res.send({"message" : "customer updated"})
+            res.send({"message" : "item updated"})
         }else {
-            res.send({"message" : "no such customer"})
+            res.send({"message" : "no such item"})
         }
     })
 })
 
-router.delete('/:id', (req, res) => {
-    const id = req.params.id
-    var query = "DELETE FROM Customer WHERE id=?";
+router.delete('/:code', (req, res) => {
+    const code = req.params.code
+    var query = "DELETE FROM Item WHERE code=?";
 
-    connection.query(query, [id], (err, rows) => {
+    connection.query(query, [code], (err, rows) => {
         if (err) console.log(err);
 
         if (rows.affectedRows > 0) {
-            res.send({ 'message': 'user deleted' })
+            res.send({ 'message': 'item deleted' })
         } else {
-            res.send({ 'message': 'user not found' })
+            res.send({ 'message': 'item not found' })
         }
     })
 })
 
 router.post('/',(req,res)=>{
-    const id = req.body.id
-    const name = req.body.name
-    const username = req.body.username
-    var query = "INSERT INTO Customer(id, name,username) VALUES (?,?,?)"
-    connection.query(query, [id,name,username], (error) =>{
+    const code = req.body.code
+    const description = req.body.description
+    const qtyOnHand = req.body.qtyOnHand
+    var query = "INSERT INTO Item(code, description,qtyOnHand) VALUES (?,?,?)"
+    connection.query(query, [code,description,qtyOnHand], (error) =>{
         if (error){
             res.send({"message" : "duplicate entry"})
         }else {
-            res.send({"message" : "customer added"})
+            res.send({"message" : "item added"})
         }
     })
 })
 
-router.get('/:id',(req,res)=>{
-    const  id = req.params.id
-    const query = "SELECT * FROM Customer WHERE id=?";
-    connection.query(query,[id],(error, rows) => {
+router.get('/:code',(req,res)=>{
+    const  code = req.params.code
+    const query = "SELECT * FROM Item WHERE code=?";
+    connection.query(query,[code],(error, rows) => {
         if(error) console.log(error);
         res.send(rows)
     })

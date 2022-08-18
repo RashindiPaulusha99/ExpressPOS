@@ -52,9 +52,9 @@ router.delete('/:id', (req, res) => {
         if (err) console.log(err);
 
         if (rows.affectedRows > 0) {
-            res.send({ 'message': 'user deleted' })
+            res.send({ 'message': 'customer deleted' })
         } else {
-            res.send({ 'message': 'user not found' })
+            res.send({ 'message': 'customer not found' })
         }
     })
 })
