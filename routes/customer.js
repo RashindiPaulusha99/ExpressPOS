@@ -21,11 +21,27 @@ connection.connect(function (error) {
 const router = express.Router()
 
 router.get('/',(req,res)=>{
-    res.send('get request came from customer')
+    var query = "SELECT * FROM Customer"
+    connection.query(query,(error, rows) =>{
+        if (error) throw error
+        res.send(rows)
+    })
 })
 
-router.get('/customer_name',(req,res)=>{
-    res.send('get request came from customer_name')
+router.put('/',(req,res)=>{
+    const id = req.body.id
+    const name = req.body.name
+    const username = req.body.username
+    var query = "UPDATE Customer SET name=?, username=? WHERE id=?"
+    connection.query(query, [name,username,id], (error,rows) =>{
+        if (error) throw error
+
+        if (rows.affectedRows >0){
+            res.send({"message" : "customer updated"})
+        }else {
+            res.send({"message" : "no such customer"})
+        }
+    })
 })
 
 router.get('/:id',(req,res)=>{
