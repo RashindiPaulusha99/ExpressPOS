@@ -8,11 +8,11 @@ connection.connect(function (error) {
         console.log(error)
     }else {
         console.log('connected to the MySQL server.')
-        var customerTable = "CREATE TABLE IF NOT EXISTS Customer (id VARCHAR(255) PRIMARY KEY, name VARCHAR(255), username VARCHAR(255))"
-        connection.query(customerTable, function (error, result){
+        var itemTable = "CREATE TABLE IF NOT EXISTS Item (code VARCHAR(255) PRIMARY KEY, description VARCHAR(255), qtyOnHand DOUBLE )"
+        connection.query(itemTable, function (error, result){
             if (error) throw error;
             if (result.warningCount === 0){
-                console.log('customer table created!');
+                console.log('item table created!');
             }
         })
     }
@@ -21,7 +21,7 @@ connection.connect(function (error) {
 const router = express.Router()
 
 router.get('/',(req,res)=>{
-    var query = "SELECT * FROM Customer"
+    var query = "SELECT * FROM Item"
     connection.query(query,(error, rows) =>{
         if (error) throw error
         res.send(rows)
@@ -29,10 +29,10 @@ router.get('/',(req,res)=>{
 })
 
 router.put('/',(req,res)=>{
-    const id = req.body.id
-    const name = req.body.name
-    const username = req.body.username
-    var query = "UPDATE Customer SET name=?, username=? WHERE id=?"
+    const code = req.body.code
+    const description = req.body.description
+    const qtyOnHand = req.body.qtyOnHand
+    var query = "UPDATE Item SET description=?, qtyOnHand=? WHERE code=?"
     connection.query(query, [name,username,id], (error,rows) =>{
         if (error) throw error
 
