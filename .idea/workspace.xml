@@ -29,6 +29,7 @@
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/customer.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/customer.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/item.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/item.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/orderDetails.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/orderDetails.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -83,7 +84,7 @@
       <updated>1660821986476</updated>
       <workItem from="1660821988409" duration="146000" />
       <workItem from="1660822371411" duration="2707000" />
-      <workItem from="1660825184613" duration="15345000" />
+      <workItem from="1660825184613" duration="15882000" />
     </task>
     <servers />
   </component>

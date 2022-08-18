@@ -74,7 +74,7 @@ router.post('/',(req,res)=>{
 })
 
 router.get('/:orderId',(req,res)=>{
-    const  orderId = req.params.code
+    const  orderId = req.params.orderId
     const query = "SELECT * FROM Orders WHERE orderId=?";
     connection.query(query,[orderId],(error, rows) => {
         if(error) console.log(error);
