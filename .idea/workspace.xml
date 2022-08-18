@@ -20,11 +20,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a34e9636-5fa4-4842-852b-a023463f5961" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/routes/customer.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/node_modules/.package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,11 +58,12 @@
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="F:\GDSE58\React\ReactPos" />
+    <key name="CopyFile.RECENT_KEYS">
       <recent name="F:\GDSE58\React\ReactPos\.idea" />
     </key>
-    <key name="CopyFile.RECENT_KEYS">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="F:\GDSE58\React\ExpressPos\routes" />
+      <recent name="F:\GDSE58\React\ReactPos" />
       <recent name="F:\GDSE58\React\ReactPos\.idea" />
     </key>
   </component>
@@ -78,7 +79,7 @@
       <updated>1660821986476</updated>
       <workItem from="1660821988409" duration="146000" />
       <workItem from="1660822371411" duration="2707000" />
-      <workItem from="1660825184613" duration="917000" />
+      <workItem from="1660825184613" duration="4796000" />
     </task>
     <servers />
   </component>
