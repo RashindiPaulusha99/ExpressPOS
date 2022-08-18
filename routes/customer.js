@@ -44,8 +44,19 @@ router.put('/',(req,res)=>{
     })
 })
 
-router.get('/:id',(req,res)=>{
-    res.send('get user id')
+router.delete('/:id',(req,res)=>{
+    const  id = req.params.id
+    const query = "DELETE FROM Customer WHERE id=?";
+    connection.query(query,[id],(error, rows)=>{
+        if (error) console.log(error)
+
+        if (rows.affectedRows >0){
+            res.send({"message" : "customer deleted"})
+        }else {
+            res.send({"message" : "no such customer"})
+        }
+    })
+
 })
 
 router.post('/',(req,res)=>{
@@ -59,6 +70,15 @@ router.post('/',(req,res)=>{
         }else {
             res.send({"message" : "customer added"})
         }
+    })
+})
+
+router.get('/:id',(req,res)=>{
+    const  id = req.params.id
+    const query = "SELECT *  FROM Customer WHERE id=?";
+    connection.query(query,[id],(error, rows)=> {
+        if (error) console.log(error);
+        res.send(rows)
     })
 })
 
