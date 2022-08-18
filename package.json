@@ -1,0 +1,16 @@
+{
+  "name": "expresspos",
+  "version": "1.0.0",
+  "description": "this is pos system used express",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "nodemon": "nodemon app.js"
+  },
+  "author": "rashindi",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.1",
+    "nodemon": "^2.0.19"
+  }
+}
